@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://byrfkxv17amxp"]
+
+[ext_resource type="Script" path="res://scripts/Cursor_script.cs" id="1_c0618"]
+[ext_resource type="Texture2D" uid="uid://bitdbb7aggnxk" path="res://sprite/cursor_main.png" id="2_jrypy"]
+
+[node name="cursor" type="Node2D"]
+light_mask = 0
+visibility_layer = 3
+script = ExtResource("1_c0618")
+
+[node name="cursor_sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_jrypy")
+offset = Vector2(4, 4)
+hframes = 2

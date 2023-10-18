@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "KnWHJAbOeAPxf0Yp+qYgjcqQugnoafXb43k2dIu2apmAzCAEIALC7GhRPvZLT9UUGjQvJ+ltr/q+jgQ7OJK4hw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\grish\\OneDrive\\Documents\\Game\\PlatformCroc\\Platformer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\grish\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "C:\\Users\\grish\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
+    "C:\\Users\\grish\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

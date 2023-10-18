@@ -1,0 +1,34 @@
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.deps.json
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.runtimeconfig.json
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.dll
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.pdb
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.csproj.AssemblyReference.cache
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.AssemblyInfoInputs.cache
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.AssemblyInfo.cs
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.csproj.CoreCompileInputs.cache
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.csproj.CopyComplete
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.dll
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\refint\Platformer.dll
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.pdb
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.genruntimeconfig.cache
+C:\Users\grish\Documents\Godot Project\PlatformCroc\.godot\mono\temp\obj\Debug\ref\Platformer.dll
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.deps.json
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.runtimeconfig.json
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.dll
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\bin\Debug\Platformer.pdb
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.csproj.AssemblyReference.cache
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.AssemblyInfoInputs.cache
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.AssemblyInfo.cs
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.csproj.CoreCompileInputs.cache
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.csproj.CopyComplete
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.dll
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\refint\Platformer.dll
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.pdb
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\Platformer.genruntimeconfig.cache
+C:\Users\grish\OneDrive\Documents\Game\PlatformCroc\.godot\mono\temp\obj\Debug\ref\Platformer.dll
