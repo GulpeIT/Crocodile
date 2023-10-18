@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://xujfb8oho4uv"]
+[gd_scene load_steps=38 format=3 uid="uid://xujfb8oho4uv"]
 
 [ext_resource type="Script" path="res://scripts/player/PlayerScript.cs" id="1_5xxhy"]
 [ext_resource type="PackedScene" uid="uid://dhg3yxmrjs4ka" path="res://scripts/StateMachin/State_machin.tscn" id="2_nldod"]
@@ -986,63 +986,65 @@ _data = {
 "Slow_Down": SubResource("Animation_ilgy7")
 }
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_tqggg"]
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_s528e"]
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_7tfjs"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2aid"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nvgby"]
 animation = &"Fall"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e2moc"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_da630"]
 animation = &"Idle"
 
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_aqsvo"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vmskw"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7togs"]
 animation = &"Jump"
 
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_oe61h"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a1fjs"]
+animation = &"RESET"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ihvqs"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fcq72"]
 animation = &"Run"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iwq4b"]
-animation = &"Slow_Down"
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sb2qr"]
+advance_mode = 2
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_y2erd"]
-graph_offset = Vector2(-239.427, -79.6958)
-nodes/Blend2/node = SubResource("AnimationNodeBlend2_7tfjs")
-nodes/Blend2/position = Vector2(320, 20)
-"nodes/Blend2 2/node" = SubResource("AnimationNodeBlend2_tqggg")
-"nodes/Blend2 2/position" = Vector2(-300, 80)
-"nodes/Blend2 3/node" = SubResource("AnimationNodeBlend2_s528e")
-"nodes/Blend2 3/position" = Vector2(20, 160)
-nodes/Fall/node = SubResource("AnimationNodeAnimation_e2aid")
-nodes/Fall/position = Vector2(-560, 360)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_e2moc")
-nodes/Idle/position = Vector2(-380, -80)
-nodes/IdleTimeScale/node = SubResource("AnimationNodeTimeScale_aqsvo")
-nodes/IdleTimeScale/position = Vector2(-240, -80)
-nodes/Jump/node = SubResource("AnimationNodeAnimation_vmskw")
-nodes/Jump/position = Vector2(-560, 480)
-nodes/OneShot/node = SubResource("AnimationNodeOneShot_oe61h")
-nodes/OneShot/position = Vector2(-340, 320)
-nodes/Run/node = SubResource("AnimationNodeAnimation_ihvqs")
-nodes/Run/position = Vector2(-540, 200)
-nodes/Slow_Down/node = SubResource("AnimationNodeAnimation_iwq4b")
-nodes/Slow_Down/position = Vector2(-540, 80)
-nodes/output/position = Vector2(620, 140)
-node_connections = [&"output", 0, &"Blend2", &"Blend2", 0, &"IdleTimeScale", &"Blend2", 1, &"Blend2 3", &"Blend2 2", 0, &"Slow_Down", &"Blend2 2", 1, &"Run", &"Blend2 3", 0, &"Blend2 2", &"Blend2 3", 1, &"OneShot", &"IdleTimeScale", 0, &"Idle", &"OneShot", 0, &"Fall", &"OneShot", 1, &"Jump"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_50hnl"]
 
-[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("HEALTH", "HITBOX", "SM", "ANIMATION_TREE")]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3xx4p"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qje37"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_elntq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0tsyj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6mdia"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_twohd"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x05e7"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jylf6"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_104kj"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c7pd5"]
+states/Fall/node = SubResource("AnimationNodeAnimation_nvgby")
+states/Fall/position = Vector2(357, -59)
+states/Idle/node = SubResource("AnimationNodeAnimation_da630")
+states/Idle/position = Vector2(357, 100)
+states/Jump/node = SubResource("AnimationNodeAnimation_7togs")
+states/Jump/position = Vector2(665, -59)
+states/RESET/node = SubResource("AnimationNodeAnimation_a1fjs")
+states/RESET/position = Vector2(505, 100)
+states/Run/node = SubResource("AnimationNodeAnimation_fcq72")
+states/Run/position = Vector2(665, 100)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sb2qr"), "Idle", "RESET", SubResource("AnimationNodeStateMachineTransition_50hnl"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_3xx4p"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_qje37"), "RESET", "Idle", SubResource("AnimationNodeStateMachineTransition_elntq"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_0tsyj"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_6mdia"), "Fall", "Run", SubResource("AnimationNodeStateMachineTransition_twohd"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_x05e7"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_jylf6"), "Run", "End", SubResource("AnimationNodeStateMachineTransition_104kj")]
+graph_offset = Vector2(-238, -151)
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("HEALTH", "HITBOX", "STATE_MACHIN", "ANIMATION_TREE")]
 collision_layer = 2
 collision_mask = 65
 script = ExtResource("1_5xxhy")
 HEALTH = NodePath("health_componet")
 HITBOX = NodePath("hitbox_component")
-SM = NodePath("StateMachin")
+STATE_MACHIN = NodePath("StateMachin")
 ANIMATION_TREE = NodePath("AnimationTree")
 
 [node name="StateMachin" parent="." instance=ExtResource("2_nldod")]
@@ -1104,12 +1106,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeBlendTree_y2erd")
+tree_root = SubResource("AnimationNodeStateMachine_c7pd5")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Blend2/blend_amount = 0.0
-"parameters/Blend2 2/blend_amount" = 1.0
-"parameters/Blend2 3/blend_amount" = 1.0
-parameters/IdleTimeScale/scale = 0.5
-parameters/OneShot/active = false
-parameters/OneShot/internal_active = false
-parameters/OneShot/request = 0
+active = true

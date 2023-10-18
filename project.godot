@@ -109,7 +109,6 @@ um_canceled={
 [physics]
 
 common/physics_ticks_per_second=165
-common/vsync/vsync_mode=2
 
 [rendering]
 

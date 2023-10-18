@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/Main_world.cs" id="1_fap5j"]
 [ext_resource type="PackedScene" uid="uid://byrfkxv17amxp" path="res://UI/cursor.tscn" id="2_s51os"]
-[ext_resource type="PackedScene" uid="uid://xujfb8oho4uv" path="res://entity/Player.tscn" id="3_5y6qg"]
+[ext_resource type="PackedScene" uid="uid://xujfb8oho4uv" path="res://entity/player.tscn" id="3_5y6qg"]
 [ext_resource type="PackedScene" uid="uid://cwt5ri13mith3" path="res://tileMaps/Grass_tileMap.tscn" id="4_xq72l"]
 
 [node name="TestWorld" type="Node2D"]
