@@ -67,9 +67,7 @@ public partial class Player_run : State {
 		if (PLAYER.DIRECTION.Y < 0 && PLAYER.IsOnFloor()){
 			PLAYER.STATE_MACHIN.ChangeState(new Player_jump(PLAYER));
 		}
-		if (PLAYER.VELOCITY.Y > 0 && !PLAYER.IsOnFloor()){
-			PLAYER.STATE_MACHIN.ChangeState(new Player_fall(PLAYER));
-		}
+
 		else if (PLAYER.VELOCITY.X == 0 && PLAYER.DIRECTION.X == 0){
 			PLAYER.STATE_MACHIN.ChangeState(new Player_idle(PLAYER));
 		}
@@ -90,6 +88,8 @@ public partial class Player_jump : State {
 		base._EnterTree();
 		GD.Print("Jump entered;");
 
+
+		PLAYER.JumpCharacter(PLAYER.JUMP_VELOCITY, 10f);
 		// PLAYER.ANIMATION_STATE_MACHIN.Travel("Jump");
 	}
 
@@ -104,19 +104,12 @@ public partial class Player_jump : State {
 
 		PLAYER.AddGravity(delta);
 		
-		PLAYER.JumpCharacter(PLAYER.JUMP_VELOCITY, 10f);
+		
 		PLAYER.MoveCharacter((float)delta, PLAYER.DIRECTION, PLAYER.ACCSELERATION * 0.15f, PLAYER.FRICTION_FORCE * 0.05f, PLAYER.MAX_SPEED * 1.65f);
-
+	
 		#region New state
-
-		if (PLAYER.IsOnFloor() && PLAYER.DIRECTION.X == 0){
-			PLAYER.STATE_MACHIN.ChangeState(new Player_idle(PLAYER));
-		}
-		else if (PLAYER.IsOnFloor() && PLAYER.DIRECTION.X != 0){
+		if (PLAYER.IsOnFloor()){
 			PLAYER.STATE_MACHIN.ChangeState(new Player_run(PLAYER));
-		}
-		if (PLAYER.VELOCITY.Y > 0){
-			PLAYER.STATE_MACHIN.ChangeState(new Player_fall(PLAYER));
 		}
 		#endregion
     }
@@ -124,46 +117,46 @@ public partial class Player_jump : State {
 
 //--------------------STATE_FALL--------------------
 
-public partial class Player_fall : State {
+// public partial class Player_fall : State {
 
-	private PlayerScript PLAYER;
-	public Player_fall(PlayerScript player){
-		PLAYER = player;    
-	}
+// 	private PlayerScript PLAYER;
+// 	public Player_fall(PlayerScript player){
+// 		PLAYER = player;    
+// 	}
 
-	public override void _EnterTree(){
-		base._EnterTree();
-		GD.Print("Fall entered;");
+// 	public override void _EnterTree(){
+// 		base._EnterTree();
+// 		GD.Print("Fall entered;");
 
-		PLAYER.ANIMATION_STATE_MACHIN.Travel("Fall");
-	}
+// 		PLAYER.ANIMATION_STATE_MACHIN.Travel("Fall");
+// 	}
 
-	public override void _ExitTree(){
-		base._ExitTree();
-		GD.Print("Fall exited;");
-	}
+// 	public override void _ExitTree(){
+// 		base._ExitTree();
+// 		GD.Print("Fall exited;");
+// 	}
 
-    public override void _PhysicsProcess(double delta)
-    {
-        base._PhysicsProcess(delta);
+//     public override void _PhysicsProcess(double delta)
+//     {
+//         base._PhysicsProcess(delta);
 
-		PLAYER.AddGravity(delta);
-		PLAYER.MoveCharacter((float)delta, PLAYER.DIRECTION, PLAYER.ACCSELERATION * 0.05f, PLAYER.FRICTION_FORCE * 0.05f, PLAYER.MAX_SPEED * 1.65f);
+// 		PLAYER.AddGravity(delta);
+// 		PLAYER.MoveCharacter((float)delta, PLAYER.DIRECTION, PLAYER.ACCSELERATION * 0.05f, PLAYER.FRICTION_FORCE * 0.05f, PLAYER.MAX_SPEED * 1.65f);
 		
-		#region New state
-		if (PLAYER.DIRECTION.Y < 0){
-			PLAYER.STATE_MACHIN.ChangeState(new Player_jump(PLAYER));
-		}
+// 		#region New state
+// 		if (PLAYER.DIRECTION.Y < 0){
+// 			PLAYER.STATE_MACHIN.ChangeState(new Player_jump(PLAYER));
+// 		}
 
-		else if (PLAYER.IsOnFloor() && PLAYER.DIRECTION.X == 0){
-			PLAYER.STATE_MACHIN.ChangeState(new Player_idle(PLAYER));
-		}
-		else if (PLAYER.IsOnFloor() && PLAYER.DIRECTION.X != 0){
-			PLAYER.STATE_MACHIN.ChangeState(new Player_run(PLAYER));
-		}
-		#endregion
-    }
-}
+// 		else if (PLAYER.IsOnFloor() && PLAYER.DIRECTION.X == 0){
+// 			PLAYER.STATE_MACHIN.ChangeState(new Player_idle(PLAYER));
+// 		}
+// 		else if (PLAYER.IsOnFloor() && PLAYER.DIRECTION.X != 0){
+// 			PLAYER.STATE_MACHIN.ChangeState(new Player_run(PLAYER));
+// 		}
+// 		#endregion
+//     }
+// }
 
 //--------------------STATE_CRAWL--------------------
 
@@ -176,12 +169,12 @@ public partial class Player_crawl : State {
 
 	public override void _EnterTree(){
 		base._EnterTree();
-		GD.Print("Jump entered;");
+		GD.Print("Crawl entered;");
 	}
 
 	public override void _ExitTree(){
 		base._ExitTree();
-		GD.Print("Jump exited;");
+		GD.Print("Crawl exited;");
 	}
 
     public override void _PhysicsProcess(double delta)

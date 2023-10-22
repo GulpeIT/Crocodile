@@ -1,4 +1,5 @@
 res://scene/TestWorld.tscn
+res://entity/Player.tscn
 res://UI/cursor.tscn
 res://scripts/componet/Health_component.cs
 res://scripts/componet/Hitbox_component.cs
@@ -8,4 +9,3 @@ res://scripts/player/PlayerScript.cs
 res://scripts/SingleTone.cs
 res://scripts/StateMachin/State.cs
 res://scripts/StateMachin/StateMachin.cs
-res://entity/Player.tscn

@@ -6,7 +6,7 @@ public partial class PlayerScript : CharacterBody2D
 		[Export] public float JUMP_VELOCITY		= 300.0f;
 		[Export] public float ACCSELERATION 	= 10.0f;
 		[Export] public float MAX_SPEED			= 125.0f;
-		[Export] public float FRICTION_FORCE 	= 2.0f;
+		[Export] public float FRICTION_FORCE 	= 3.0f;
 		[Export] public float MAX_STAMINA 		= 100.0f;
 
 		public float GRAVITY = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
