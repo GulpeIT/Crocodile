@@ -10,8 +10,7 @@ public abstract partial class State : Node{
         base._ExitTree();
     }
 
-    public override void _PhysicsProcess(double delta)
-    {
+    public override void _PhysicsProcess(double delta){
         base._PhysicsProcess(delta);
     }
 }

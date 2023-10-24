@@ -9,7 +9,7 @@ public partial class PlayerScript : CharacterBody2D
 		[Export] public float FRICTION_FORCE 	= 3.0f;
 		[Export] public float MAX_STAMINA 		= 100.0f;
 
-		public float GRAVITY = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
+		private float GRAVITY = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 	#endregion
 
 	#region Componets
@@ -43,13 +43,14 @@ public partial class PlayerScript : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta){
 		DIRECTION = Input.GetVector("uc_left", "uc_right", "uc_up", "uc_down");
-		
-		
 		Velocity = VELOCITY;
+		
+		
 		// Debug option
-		if (TEXT_INFO is Label) TEXT_INFO.Text = 
-		$" X : {Mathf.Round(Velocity.X)} | Y : {Mathf.Round(Velocity.Y)} " + 
-		$"\n dir : X {Mathf.Round(DIRECTION.X)} Y {Mathf.Round(DIRECTION.Y)} | acs : {ACCSELERATION}"; 
+		if (TEXT_INFO is Label) {
+			TEXT_INFO.Text = $"vel : X {Mathf.Round(Velocity.X)} | Y {Mathf.Round(Velocity.Y)}" + 
+			$"\ndir : X {Mathf.Round(DIRECTION.X)} | Y {Mathf.Round(DIRECTION.Y)} \nacs : {ACCSELERATION}";
+		}
 		
 		MoveAndSlide();
 	}
@@ -71,8 +72,9 @@ public partial class PlayerScript : CharacterBody2D
 	}
 	
 	public void FlipBodyControl(){
-		if (VELOCITY.X != 0) 
+		if (VELOCITY.X != 0){
 			BODY.Scale = new Vector2(VELOCITY.Normalized().X > 0 ? 1 : -1, 1);
+		}
 	}
 
 	public void JumpCharacter(float jumpVelocity, float needStaminaForJump){

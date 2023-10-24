@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://xujfb8oho4uv"]
+[gd_scene load_steps=44 format=3 uid="uid://xujfb8oho4uv"]
 
 [ext_resource type="Script" path="res://scripts/player/PlayerScript.cs" id="1_5xxhy"]
 [ext_resource type="PackedScene" uid="uid://dhg3yxmrjs4ka" path="res://scripts/StateMachin/State_machin.tscn" id="2_nldod"]
@@ -1024,17 +1024,43 @@ xfade_curve = SubResource("Curve_c4fe5")
 xfade_time = 0.1
 xfade_curve = SubResource("Curve_c4fe5")
 
+[sub_resource type="Curve" id="Curve_pqjwv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0tsyj"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_pqjwv")
+
+[sub_resource type="Curve" id="Curve_cnjkt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6mdia"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_cnjkt")
+
+[sub_resource type="Curve" id="Curve_gv7t8"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.915, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_twohd"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_gv7t8")
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x05e7"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jylf6"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_104kj"]
+
+[sub_resource type="Curve" id="Curve_1juou"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.915, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ixetr"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_1juou")
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c7pd5"]
 states/Fall/node = SubResource("AnimationNodeAnimation_nvgby")
@@ -1047,8 +1073,8 @@ states/RESET/node = SubResource("AnimationNodeAnimation_a1fjs")
 states/RESET/position = Vector2(505, 100)
 states/Run/node = SubResource("AnimationNodeAnimation_fcq72")
 states/Run/position = Vector2(665, 100)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sb2qr"), "Idle", "RESET", SubResource("AnimationNodeStateMachineTransition_50hnl"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_3xx4p"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_qje37"), "RESET", "Idle", SubResource("AnimationNodeStateMachineTransition_elntq"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_0tsyj"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_6mdia"), "Fall", "Run", SubResource("AnimationNodeStateMachineTransition_twohd"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_x05e7"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_jylf6"), "Run", "End", SubResource("AnimationNodeStateMachineTransition_104kj")]
-graph_offset = Vector2(-178, -184)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sb2qr"), "Idle", "RESET", SubResource("AnimationNodeStateMachineTransition_50hnl"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_3xx4p"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_qje37"), "RESET", "Idle", SubResource("AnimationNodeStateMachineTransition_elntq"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_0tsyj"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_6mdia"), "Fall", "Run", SubResource("AnimationNodeStateMachineTransition_twohd"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_x05e7"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_jylf6"), "Run", "End", SubResource("AnimationNodeStateMachineTransition_104kj"), "Run", "Fall", SubResource("AnimationNodeStateMachineTransition_ixetr")]
+graph_offset = Vector2(-202, -169)
 
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("HEALTH", "HITBOX", "STATE_MACHIN", "ANIMATION_TREE")]
 collision_layer = 2
