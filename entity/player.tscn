@@ -1,10 +1,10 @@
-[gd_scene load_steps=44 format=3 uid="uid://xujfb8oho4uv"]
+[gd_scene load_steps=49 format=3 uid="uid://xujfb8oho4uv"]
 
 [ext_resource type="Script" path="res://scripts/player/PlayerScript.cs" id="1_5xxhy"]
 [ext_resource type="PackedScene" uid="uid://dhg3yxmrjs4ka" path="res://scripts/StateMachin/State_machin.tscn" id="2_nldod"]
 [ext_resource type="PackedScene" uid="uid://dsvjpq24wp2yq" path="res://scripts/componet/Health_component.tscn" id="2_tf2rj"]
 [ext_resource type="PackedScene" uid="uid://doeujdethpe7r" path="res://scripts/componet/Hitbox_component.tscn" id="3_lfb4t"]
-[ext_resource type="Texture2D" uid="uid://ddxeq7woc1is0" path="res://sprite/crocodile_sprite/crocodile.png" id="4_jatsh"]
+[ext_resource type="Texture2D" uid="uid://1koo1can1utc" path="res://sprite/crocodile_sprite/crocodile.png" id="4_jatsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28els"]
 size = Vector2(12, 16)
@@ -13,29 +13,36 @@ size = Vector2(12, 16)
 radius = 5.0
 height = 20.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wykv"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1l45"]
+load_path = "res://.godot/imported/crocodile.png-804a67034b0f89d0f341d7c6719b0cd3.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dher1"]
-atlas = ExtResource("4_jatsh")
-region = Rect2(0, 32, 48, 16)
+atlas = SubResource("CompressedTexture2D_n1l45")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtd5t"]
 atlas = ExtResource("4_jatsh")
-region = Rect2(0, 3, 16, 9)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0vkp"]
 atlas = ExtResource("4_jatsh")
-region = Rect2(22, 6, 4, 4)
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_52egh"]
 atlas = ExtResource("4_jatsh")
-region = Rect2(35, 5, 10, 5)
+region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8jpk"]
 atlas = ExtResource("4_jatsh")
-region = Rect2(21, 21, 7, 7)
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vb2mh"]
 atlas = ExtResource("4_jatsh")
-region = Rect2(5, 21, 7, 7)
+region = Rect2(0, 32, 32, 16)
 
 [sub_resource type="Animation" id="Animation_h1hnn"]
 resource_name = "Fall"
@@ -348,7 +355,8 @@ tracks/9/keys = {
 
 [sub_resource type="Animation" id="Animation_5ojbi"]
 resource_name = "Jump"
-length = 0.4
+length = 0.15
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -356,7 +364,7 @@ tracks/0/path = NodePath("body_controler/tors:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(2, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 1), Vector2(0, 0)]
@@ -368,7 +376,7 @@ tracks/1/path = NodePath("body_controler/tors:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.0]
@@ -380,7 +388,7 @@ tracks/2/path = NodePath("body_controler/tors:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(2, 2, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 0.85), Vector2(0.7, 1)]
@@ -392,7 +400,7 @@ tracks/3/path = NodePath("body_controler/tors/hand_R:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
 "values": [Vector2(6, 2), Vector2(4, 2), Vector2(7.50001, -13)]
@@ -404,7 +412,7 @@ tracks/4/path = NodePath("body_controler/tors/hand_R:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
 "values": [0.0, 0.523598, -3.14159]
@@ -416,7 +424,7 @@ tracks/5/path = NodePath("body_controler/tors/hand_R:scale")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
@@ -428,7 +436,7 @@ tracks/6/path = NodePath("body_controler/tors/hand_L:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
 "values": [Vector2(-6, 2), Vector2(-8, 2), Vector2(-4.35979, -12.9564)]
@@ -440,7 +448,7 @@ tracks/7/path = NodePath("body_controler/tors/hand_L:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 2, 1),
 "update": 0,
 "values": [0.0, 0.523598, -3.14159]
@@ -452,7 +460,7 @@ tracks/8/path = NodePath("body_controler/tors/hand_L:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
@@ -464,7 +472,7 @@ tracks/9/path = NodePath("body_controler/tors/tail:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-6, 1), Vector2(-6, 1), Vector2(-6, 1)]
@@ -476,7 +484,7 @@ tracks/10/path = NodePath("body_controler/tors/tail:rotation")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(0.5, -0.5, 1),
 "update": 0,
 "values": [0.0, -0.523598, -1.0472]
@@ -488,7 +496,7 @@ tracks/11/path = NodePath("body_controler/tors/tail:scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
@@ -699,6 +707,78 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("body_controler/tors/hand_L:frame")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("body_controler/tors/head/eyes:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -3)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("body_controler/tors/head/eyes:rotation")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("body_controler/tors/head/eyes:scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("player_collision:disabled")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("player_colision_crawl:disabled")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_4p2br"]
@@ -976,6 +1056,237 @@ tracks/10/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_b20ng"]
+resource_name = "Slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body_controler/tors:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body_controler/tors/head:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-7, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("body_controler/tors/head:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.523598]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("body_controler/tors/head:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("body_controler/tors/hand_R:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 2)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("body_controler/tors/hand_R:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("body_controler/tors/hand_R:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("body_controler/tors/hand_L:frame")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("body_controler/tors/hand_L:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-12, 5)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("body_controler/tors/hand_L:rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("body_controler/tors/hand_L:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("body_controler/tors/tail:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-6, 5)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("body_controler/tors/tail:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("body_controler/tors/tail:scale")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("body_controler/tors/head/eyes:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-0.115103, -2.53787)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("body_controler/tors/head/eyes:rotation")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.261799]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("body_controler/tors/head/eyes:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("player_collision:disabled")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("player_colision_crawl:disabled")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aqdvc"]
 _data = {
 "Fall": SubResource("Animation_h1hnn"),
@@ -983,6 +1294,7 @@ _data = {
 "Jump": SubResource("Animation_5ojbi"),
 "RESET": SubResource("Animation_aws65"),
 "Run": SubResource("Animation_4p2br"),
+"Slide": SubResource("Animation_b20ng"),
 "Slow_Down": SubResource("Animation_ilgy7")
 }
 
@@ -1041,26 +1353,41 @@ xfade_time = 0.2
 xfade_curve = SubResource("Curve_cnjkt")
 
 [sub_resource type="Curve" id="Curve_gv7t8"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.915, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_twohd"]
-xfade_time = 0.2
+xfade_time = 0.1
 xfade_curve = SubResource("Curve_gv7t8")
+switch_mode = 1
+
+[sub_resource type="Curve" id="Curve_doc4e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x05e7"]
+xfade_time = 0.2
+xfade_curve = SubResource("Curve_doc4e")
+
+[sub_resource type="Curve" id="Curve_gavmv"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+metadata/_snap_enabled = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jylf6"]
+xfade_time = 0.1
+xfade_curve = SubResource("Curve_gavmv")
+switch_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_104kj"]
 
-[sub_resource type="Curve" id="Curve_1juou"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 2.915, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_pshxs"]
+_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ixetr"]
 xfade_time = 0.2
-xfade_curve = SubResource("Curve_1juou")
+xfade_curve = SubResource("Curve_pshxs")
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c7pd5"]
 states/Fall/node = SubResource("AnimationNodeAnimation_nvgby")
@@ -1074,7 +1401,7 @@ states/RESET/position = Vector2(505, 100)
 states/Run/node = SubResource("AnimationNodeAnimation_fcq72")
 states/Run/position = Vector2(665, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_sb2qr"), "Idle", "RESET", SubResource("AnimationNodeStateMachineTransition_50hnl"), "RESET", "Run", SubResource("AnimationNodeStateMachineTransition_3xx4p"), "Run", "RESET", SubResource("AnimationNodeStateMachineTransition_qje37"), "RESET", "Idle", SubResource("AnimationNodeStateMachineTransition_elntq"), "Fall", "Idle", SubResource("AnimationNodeStateMachineTransition_0tsyj"), "Idle", "Fall", SubResource("AnimationNodeStateMachineTransition_6mdia"), "Fall", "Run", SubResource("AnimationNodeStateMachineTransition_twohd"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_x05e7"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_jylf6"), "Run", "End", SubResource("AnimationNodeStateMachineTransition_104kj"), "Run", "Fall", SubResource("AnimationNodeStateMachineTransition_ixetr")]
-graph_offset = Vector2(-202, -169)
+graph_offset = Vector2(-286, -163)
 
 [node name="player" type="CharacterBody2D" node_paths=PackedStringArray("HEALTH", "HITBOX", "STATE_MACHIN", "ANIMATION_TREE")]
 collision_layer = 2
@@ -1103,40 +1430,54 @@ shape = SubResource("RectangleShape2D_28els")
 debug_color = Color(0.905882, 0.270588, 0.341176, 0.203922)
 
 [node name="player_collision" type="CollisionShape2D" parent="."]
+z_index = 1
 position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_sb3iq")
-debug_color = Color(0, 0.6, 0.701961, 0)
+debug_color = Color(0, 0.584314, 0.780392, 0)
+
+[node name="player_colision_crawl" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-3, 3)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_6wykv")
+disabled = true
+debug_color = Color(0.596078, 0.372549, 1, 0)
 
 [node name="body_controler" type="Node2D" parent="."]
 
 [node name="tors" type="Sprite2D" parent="body_controler"]
+position = Vector2(0, 0.255097)
+scale = Vector2(1, 0.971656)
 texture = SubResource("AtlasTexture_dher1")
-hframes = 3
+hframes = 2
+vframes = 2
 
 [node name="head" type="Sprite2D" parent="body_controler/tors"]
-position = Vector2(0, -8)
+position = Vector2(0, -7.14968)
 texture = SubResource("AtlasTexture_wtd5t")
 offset = Vector2(2, -2)
 
 [node name="eyes" type="Sprite2D" parent="body_controler/tors/head"]
-position = Vector2(-0.525361, -2.67829)
+position = Vector2(0, -3)
 texture = SubResource("AtlasTexture_e0vkp")
 
 [node name="tail" type="Sprite2D" parent="body_controler/tors"]
 show_behind_parent = true
 z_index = -1
 position = Vector2(-6, 1)
+rotation = 0.218447
 texture = SubResource("AtlasTexture_52egh")
 offset = Vector2(-4, 0)
 
 [node name="hand_R" type="Sprite2D" parent="body_controler/tors"]
 z_index = -1
-position = Vector2(6, 2)
+position = Vector2(6, 2.56688)
 texture = SubResource("AtlasTexture_q8jpk")
 
 [node name="hand_L" type="Sprite2D" parent="body_controler/tors"]
-position = Vector2(-6, 2)
+position = Vector2(-6, 2.56688)
 texture = SubResource("AtlasTexture_vb2mh")
+hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

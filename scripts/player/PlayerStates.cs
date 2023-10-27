@@ -90,7 +90,7 @@ public partial class Player_jump : State {
 
 
 		PLAYER.JumpCharacter(PLAYER.JUMP_VELOCITY, 10f);
-		// PLAYER.ANIMATION_STATE_MACHIN.Travel("Jump");
+		PLAYER.ANIMATION_STATE_MACHIN.Travel("Jump");
 	}
 
 	public override void _ExitTree(){
