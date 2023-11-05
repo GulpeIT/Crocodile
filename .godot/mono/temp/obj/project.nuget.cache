@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pu0sQHVKi90oxmeSd+OB9FGbj0AsBa4/zyMIrhZjSbWzBXClCpqj7fkMdH7JMCt0eIYPCnrj9j66fytbplhykw==",
+  "dgSpecHash": "iubql+6lvgvOX5mprXb11MKowm86yCON3yGPYNTtLwMsTKDMKPEGBSXDL5ITf9NC6LIAo3ny4iyoZ3ClVErOLQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\grish\\OneDrive\\Documents\\Game\\Crocodile\\Platformer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\grish\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
-    "C:\\Users\\grish\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
-    "C:\\Users\\grish\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
+    "C:\\Users\\grish\\.nuget\\packages\\godot.sourcegenerators\\4.1.3\\godot.sourcegenerators.4.1.3.nupkg.sha512",
+    "C:\\Users\\grish\\.nuget\\packages\\godotsharp\\4.1.3\\godotsharp.4.1.3.nupkg.sha512",
+    "C:\\Users\\grish\\.nuget\\packages\\godotsharpeditor\\4.1.3\\godotsharpeditor.4.1.3.nupkg.sha512"
   ],
   "logs": []
 }

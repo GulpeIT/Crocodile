@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698439014
+::res://::1698946171
 icon.svg::CompressedTexture2D::2688441849820109288::1695765533::1696443541::1::::<><>::
 Transcripts.txt::TextFile::-1::1696324134::0::1::::<><>::
-::res://entity/::1698437926
-Player.tscn::PackedScene::1656186444808293649::1698437926::0::1::::<><>::res://scripts/player/PlayerScript.cs<>uid://dhg3yxmrjs4ka::::res://scripts/StateMachin/State_machin.tscn<>uid://dsvjpq24wp2yq::::res://scripts/componet/Health_component.tscn<>uid://doeujdethpe7r::::res://scripts/componet/Hitbox_component.tscn<>uid://ddxeq7woc1is0::::res://sprite/crocodile_sprite/crocodile.png
+::res://entity/::1698443978
+Player.tscn::PackedScene::1656186444808293649::1698443978::0::1::::<><>::res://scripts/player/PlayerScript.cs<>uid://dhg3yxmrjs4ka::::res://scripts/StateMachin/State_machin.tscn<>uid://dsvjpq24wp2yq::::res://scripts/componet/Health_component.tscn<>uid://doeujdethpe7r::::res://scripts/componet/Hitbox_component.tscn<>uid://1koo1can1utc::::res://sprite/crocodile_sprite/crocodile.png
 ::res://particles/::1697358210
-::res://scene/::1698438938
-TestWorld.tscn::PackedScene::7810281400105290841::1698438938::0::1::::<><>::res://scripts/Main_world.cs<>uid://byrfkxv17amxp::::res://UI/cursor.tscn<>uid://xujfb8oho4uv::::res://entity/Player.tscn<>uid://cwt5ri13mith3::::res://tileMaps/Grass_tileMap.tscn
+::res://scene/::1698440739
+TestWorld.tscn::PackedScene::7810281400105290841::1698440739::0::1::::<><>::res://scripts/Main_world.cs<>uid://byrfkxv17amxp::::res://UI/cursor.tscn<>uid://xujfb8oho4uv::::res://entity/Player.tscn<>uid://cwt5ri13mith3::::res://tileMaps/Grass_tileMap.tscn
 ::res://scripts/::1696724434
 Cursor_script.cs::CSharpScript::-1::1696698709::0::1::::<><>::
 Main_world.cs::CSharpScript::-1::1696698712::0::1::::<><>::
@@ -20,7 +20,7 @@ Hitbox_component.cs::CSharpScript::-1::1696698705::0::1::::<><>::
 Hitbox_component.tscn::PackedScene::8151393949650959785::1696883328::0::1::::<><>::res://scripts/componet/Hitbox_component.cs
 ::res://scripts/player/::1697236185
 PlayerScript.cs::CSharpScript::-1::1698188250::0::1::::<><>::
-PlayerStates.cs::CSharpScript::-1::1698437572::0::1::::<><>::
+PlayerStates.cs::CSharpScript::-1::1698443981::0::1::::<><>::
 ::res://scripts/StateMachin/::1696883328
 State.cs::CSharpScript::-1::1698187340::0::1::::<><>::
 StateMachin.cs::CSharpScript::-1::1698187333::0::1::::<><>::
@@ -35,5 +35,5 @@ crocodile.png::CompressedTexture2D::1846430119857969400::1698439006::1698439014:
 Smoke.png::CompressedTexture2D::5477608440420537397::1696718610::1696718610::1::::<><>::
 ::res://tileMaps/::1696344464
 Grass_tileMap.tscn::PackedScene::6358071434669707990::1696323291::0::1::::<><>::uid://cq883muufacqb
-::res://UI/::1698437926
-cursor.tscn::PackedScene::4106370037429820237::1698437926::0::1::::<><>::res://scripts/Cursor_script.cs<>uid://bitdbb7aggnxk::::res://sprite/cursor_main.png
+::res://UI/::1698440739
+cursor.tscn::PackedScene::4106370037429820237::1698440739::0::1::::<><>::res://scripts/Cursor_script.cs<>uid://bitdbb7aggnxk::::res://sprite/cursor_main.png
