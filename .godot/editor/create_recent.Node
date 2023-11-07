@@ -1,3 +1,4 @@
+AnimationTree
 CollisionShape2D
 Node2D
 Camera2D
@@ -11,7 +12,6 @@ AnimationPlayer
 TextureProgressBar
 Label
 RayCast2D
-AnimationTree
 Node
 GPUParticles2D
 CPUParticles2D

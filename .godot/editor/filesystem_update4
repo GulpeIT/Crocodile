@@ -1,6 +1,5 @@
 res://scene/TestWorld.tscn
 res://entity/Player.tscn
-res://UI/cursor.tscn
 res://scripts/componet/Health_component.cs
 res://scripts/componet/Hitbox_component.cs
 res://scripts/Cursor_script.cs

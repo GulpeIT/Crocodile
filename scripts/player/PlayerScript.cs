@@ -19,7 +19,7 @@ public partial class PlayerScript : CharacterBody2D
 
 	#region State machin and animation
 		[Export] public StateMachin STATE_MACHIN;
-		[Export] private AnimationTree ANIMATION_TREE;
+		[Export] public AnimationTree ANIMATION_TREE;
 		public AnimationNodeStateMachinePlayback ANIMATION_STATE_MACHIN; // This needs to be send in States
 	#endregion
 
@@ -54,7 +54,14 @@ public partial class PlayerScript : CharacterBody2D
 		
 		MoveAndSlide();
 	}
-
+	/// <summary>
+	/// The main method of character movement in the game
+	/// </summary>
+	/// <param name="delta"></param>
+	/// <param name="direction">The direction of the character's movement</param>
+	/// <param name="acceleration">Character Acceleration</param>
+	/// <param name="frictionForce">The friction force. Affects how effectively the character will slow down</param>
+	/// <param name="maxSpeed">Maximum character speed</param>
 	public void MoveCharacter(float delta, Vector2 direction, float acceleration, float frictionForce, float maxSpeed){
 		FlipBodyControl();
 
@@ -70,19 +77,38 @@ public partial class PlayerScript : CharacterBody2D
 		}
 		else VELOCITY.X = Mathf.MoveToward(VELOCITY.X, 0, frictionForce);		
 	}
-	
+
+	/// <summary>
+	/// The method is designed to instantly accelerate the character
+	/// </summary>
+	/// <param name="direction">The direction of the character's movement</param>
+	/// <param name="pushForce">The force with which the character should be "pushed"</param>
+	public void PushCharacter(Vector2 direction, float pushForce){
+		VELOCITY.X += pushForce * direction.X;
+	}
+	/// <summary>
+	/// The method controls the character's rotation by changing the "Scale" parameter of the "Body" node
+	/// </summary>
 	public void FlipBodyControl(){
 		if (VELOCITY.X != 0){
 			BODY.Scale = new Vector2(VELOCITY.Normalized().X > 0 ? 1 : -1, 1);
 		}
 	}
 
-	public void JumpCharacter(float jumpVelocity, float needStaminaForJump){
+	/// <summary>
+	/// Simple jump method
+	/// </summary>
+	/// <param name="jumpVelocity">The value of how high the character will jump</param>
+	public void JumpCharacter(float jumpVelocity){
 		if (IsOnFloor() && Input.IsActionPressed("uc_up")){
 			VELOCITY.Y -= jumpVelocity;
 		}
 	}
 
+	/// <summary>
+	///	This method adds gravity to the character
+	/// </summary>
+	/// <param name="delta"></param>
 	public void AddGravity(double delta){
 		if (!IsOnFloor()){
 			VELOCITY.Y += GRAVITY * (float)delta;
