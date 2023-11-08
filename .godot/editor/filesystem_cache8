@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699396299
+::res://::1699445878
 icon.svg::CompressedTexture2D::2688441849820109288::1697649661::1697649661::1::::<><>::
 Transcripts.txt::TextFile::-1::1697649661::0::1::::<><>::
 ::res://entity/::1699396205
-Player.tscn::PackedScene::1656186444808293649::1699396205::0::1::::<><>::res://scripts/player/PlayerScript.cs<>uid://dhg3yxmrjs4ka::::res://scripts/StateMachin/State_machin.tscn<>uid://dsvjpq24wp2yq::::res://scripts/componet/Health_component.tscn<>uid://doeujdethpe7r::::res://scripts/componet/Hitbox_component.tscn<>uid://1koo1can1utc::::res://sprite/crocodile_sprite/crocodile.png
+Player.tscn::PackedScene::1656186444808293649::1699396205::0::1::::<><>::res://scripts/player/PlayerScript.cs<>uid://dhg3yxmrjs4ka
 ::res://scene/::1699396205
 TestWorld.tscn::PackedScene::7810281400105290841::1699396205::0::1::::<><>::res://scripts/Main_world.cs<>uid://byrfkxv17amxp::::res://UI/cursor.tscn<>uid://xujfb8oho4uv::::res://entity/player.tscn<>uid://cwt5ri13mith3::::res://tileMaps/Grass_tileMap.tscn
 ::res://scripts/::1697649661

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://df5qqkn0hqr24"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_854cs"]
+radius = 7.0
+height = 34.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eu8b5"]
+radius = 4.0
+height = 12.0
+
+[node name="PlayerRagDoll" type="RigidBody2D"]
+
+[node name="MainCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_854cs")
+debug_color = Color(0, 0.6, 0.701961, 0.113725)
+
+[node name="Body controler" type="Node2D" parent="."]
+
+[node name="Body" type="RigidBody2D" parent="Body controler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body controler/Body"]
+shape = SubResource("CapsuleShape2D_eu8b5")
+debug_color = Color(0, 0.85098, 0.352941, 0.419608)
+
+[node name="Head" type="RigidBody2D" parent="Body controler"]

@@ -1,9 +1,8 @@
+res://entity
 res://scripts/StateMachin
-res://particles
 res://scripts/componet
 res://sprite
 res://scripts/classes
-res://entity
 res://tileMaps
 res://scripts
 res://UI
