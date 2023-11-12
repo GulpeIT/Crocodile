@@ -13,11 +13,11 @@ size = Vector2(12, 16)
 radius = 5.0
 height = 20.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n1l45"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tepwd"]
 load_path = "res://.godot/imported/crocodile.png-804a67034b0f89d0f341d7c6719b0cd3.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dher1"]
-atlas = SubResource("CompressedTexture2D_n1l45")
+atlas = SubResource("CompressedTexture2D_tepwd")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtd5t"]

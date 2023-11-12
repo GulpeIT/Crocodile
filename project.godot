@@ -108,7 +108,7 @@ um_canceled={
 
 [physics]
 
-common/physics_ticks_per_second=125
+common/physics_ticks_per_second=165
 
 [rendering]
 
