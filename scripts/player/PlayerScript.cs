@@ -45,15 +45,15 @@ public partial class PlayerScript : CharacterBody2D
 		DIRECTION = Input.GetVector("uc_left", "uc_right", "uc_up", "uc_down");
 		Velocity = VELOCITY;
 		
-		
 		// Debug option
 		if (TEXT_INFO is Label) {
 			TEXT_INFO.Text = $"vel : X {Mathf.Round(Velocity.X)} | Y {Mathf.Round(Velocity.Y)}" + 
 			$"\ndir : X {Mathf.Round(DIRECTION.X)} | Y {Mathf.Round(DIRECTION.Y)} \nacs : {ACCSELERATION}";
 		}
-		
+
 		MoveAndSlide();
 	}
+	
 	/// <summary>
 	/// The main method of character movement in the game
 	/// </summary>
@@ -65,6 +65,11 @@ public partial class PlayerScript : CharacterBody2D
 	public void MoveCharacter(float delta, Vector2 direction, float acceleration, float frictionForce, float maxSpeed){
 		FlipBodyControl();
 
+		if (IsOnWall()){
+			VELOCITY.X = 0;
+			GD.Print("True, is on wall");
+		}
+
 		if (Mathf.Abs(VELOCITY.X) > maxSpeed){
 			VELOCITY.X = Mathf.MoveToward(VELOCITY.X, maxSpeed, frictionForce * 0.5f);
 		}
@@ -75,7 +80,8 @@ public partial class PlayerScript : CharacterBody2D
 		else if (direction.X < 0){
 			VELOCITY.X = Mathf.Max(VELOCITY.X - acceleration, -maxSpeed);
 		}
-		else VELOCITY.X = Mathf.MoveToward(VELOCITY.X, 0, frictionForce);		
+
+		else VELOCITY.X = Mathf.MoveToward(VELOCITY.X, 0, frictionForce);
 	}
 
 	/// <summary>

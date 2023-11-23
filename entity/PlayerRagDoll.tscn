@@ -83,7 +83,7 @@ position = Vector2(3, -4.76837e-07)
 rotation = -0.785397
 node_a = NodePath("..")
 node_b = NodePath("../Hand_R")
-length = 5.0
+length = 4.0
 stiffness = 40.0
 damping = 5.0
 
@@ -92,7 +92,7 @@ position = Vector2(-3, 1.19209e-07)
 rotation = 7.06857
 node_a = NodePath("..")
 node_b = NodePath("../Hand_L")
-length = 5.0
+length = 4.0
 stiffness = 40.0
 damping = 5.0
 
@@ -153,7 +153,7 @@ texture = SubResource("AtlasTexture_1iutx")
 hframes = 2
 
 [node name="Tail" type="RigidBody2D" parent="."]
-collision_mask = 2
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tail"]
 position = Vector2(-10, 2)
